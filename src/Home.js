@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 
 class Home extends Component {
   state = {
-    properties: {},
+    properties: [],
   };
 
   async componentDidMount() {
     try {
       const res = await fetch('https://data.providenceri.gov/resource/r6n7-qjr6.json');
-      const properties = res.json();
+
+      const properties = await res.json();
+
       this.setState({
         properties,
       });
@@ -19,14 +21,23 @@ class Home extends Component {
 
   render() {
     const { properties } = this.state;
-    console.log(properties);
 
     return (
       <div>
-        <h1>Hello</h1>
+        {properties.map((property, idx) => (
+          <div key={idx}>
+            <p>{property.class}</p>
+            <p>{property.class}</p>
+            <p>{property.class}</p>
+          </div>
+        ))}
       </div>
     );
   }
 }
 
 export default Home;
+
+// {
+//   /* <div>{properties.map(property => <h1>{property.class}</h1>)}</div>; */
+// }
