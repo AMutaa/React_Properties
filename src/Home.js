@@ -9,16 +9,21 @@ class Home extends Component {
     try {
       const res = await fetch('https://data.providenceri.gov/resource/r6n7-qjr6.json');
       const properties = res.json();
-      console.log(properties);
+      this.setState({
+        properties,
+      });
     } catch (e) {
       console.log(e);
     }
   }
 
   render() {
+    const { properties } = this.state;
+    console.log(properties);
+
     return (
       <div>
-        <h1>Hello There</h1>
+        <h1>Hello</h1>
       </div>
     );
   }
