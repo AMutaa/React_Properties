@@ -37,7 +37,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-// {
-//   /* <div>{properties.map(property => <h1>{property.class}</h1>)}</div>; */
-// }
