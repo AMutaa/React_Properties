@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.scss';
 
 class Home extends Component {
   state = {
@@ -8,9 +9,8 @@ class Home extends Component {
   async componentDidMount() {
     try {
       const res = await fetch('https://data.providenceri.gov/resource/r6n7-qjr6.json');
-
       const properties = await res.json();
-
+      console.log(properties)
       this.setState({
         properties,
       });
@@ -21,14 +21,13 @@ class Home extends Component {
 
   render() {
     const { properties } = this.state;
-
     return (
       <div>
         {properties.map((property, idx) => (
           <div key={idx}>
-            <p>{property.class}</p>
-            <p>{property.class}</p>
-            <p>{property.class}</p>
+            <p>{property.formatted_address}</p>
+            <p className="trial">{property.class}</p>
+            <p>{property.owner_state}</p>
           </div>
         ))}
       </div>
