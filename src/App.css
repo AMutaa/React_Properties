@@ -1,3 +1,14 @@
 .trial {
   color: #61dafb;
   font-size: 20px; }
+
+.btn {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  background: #c7c417;
+  border: none; }
+  .btn:hover {
+    background: #ece924; }
